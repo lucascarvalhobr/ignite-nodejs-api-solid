@@ -1,21 +1,33 @@
-import { Category } from "../models/category"
+import { Category } from "../../../../models/category"
+import { ICategoriesRepository } from "../ICategoriesRepository";
 
 interface ICreateCategoryDTO{
     name: string;
     description: string;
 }
 
-class CategoriesRepository {
+class CategoriesRepository implements ICategoriesRepository {
 
     private categories: Category[];
 
-    constructor() {
+    private static INSTANCE: CategoriesRepository;
+
+
+    private constructor() {
         this.categories = [];
+    }
+
+    static getInstance(){
+        if(!CategoriesRepository.INSTANCE){
+            CategoriesRepository.INSTANCE = new CategoriesRepository();
+        }
+
+        return CategoriesRepository.INSTANCE;
     }
 
     create({name, description}: ICreateCategoryDTO) {
         
-        const category = new Category(name, description);
+        const category = new Category();
     
         Object.assign(category,{    
             name,
@@ -37,4 +49,4 @@ class CategoriesRepository {
     }
 }
 
-export { CategoriesRepository }
+export { CategoriesRepository, ICreateCategoryDTO }

@@ -1,10 +1,15 @@
 import { v4 as uuidV4 } from 'uuid'
 
-class Category {
-
+class Car{
     id: string;
-    name: string;
+    name:string;
     description: string;
+    daily_rate: number;
+    available: boolean;
+    license_plate: string;
+    brand_id: string;
+    line_amount: number;
+    brand: string;
     created_at: Date;
 
     constructor() {
@@ -14,4 +19,5 @@ class Category {
     }
 }
 
-export { Category }
+
+export {Car}

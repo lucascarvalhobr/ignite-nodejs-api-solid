@@ -1,10 +1,9 @@
 import { v4 as uuidV4 } from 'uuid'
 
-class Category {
-
+class CarImage{
     id: string;
-    name: string;
-    description: string;
+    car_id: string;
+    image_name: string;
     created_at: Date;
 
     constructor() {
@@ -14,4 +13,4 @@ class Category {
     }
 }
 
-export { Category }
+export {CarImage}
