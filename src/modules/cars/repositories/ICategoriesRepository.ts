@@ -1,12 +1,12 @@
 import { Category } from "../../../models/category";
-import { ICreateCategoryDTO } from "./implementations/CategoriesRespository";
+import { ICreateCategoryDTO } from "../infra/typeorm/repositories/CategoriesRespository";
 
 interface ICategoriesRepository{
-    findByName(name: string): Category;
+    findByName(name: string): Promise<Category>;
 
-    list(): Category[];
+    list(): Promise<Category[]>;
 
-    create({name, description}: ICreateCategoryDTO): void;
+    create({name, description}: ICreateCategoryDTO): Promise<void>;
 }
 
 export {ICategoriesRepository}
