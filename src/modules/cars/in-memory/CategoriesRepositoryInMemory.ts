@@ -1,6 +1,6 @@
 import { Category } from "../../../models/category";
 import { ICategoriesRepository } from "../repositories/ICategoriesRepository";
-import { ICreateCategoryDTO } from "../infra/typeorm/repositories/CategoriesRespository";
+import { ICreateCategoryDTO } from "../infra/typeorm/repositories/CategoriesRepository";
 
 class CategoriesRepositoriesInMemory implements ICategoriesRepository{
     

@@ -8,6 +8,9 @@ import "../typeorm"
 import "../../container"
 
 import { AppError } from "../../errors/AppError";
+import  createConnection  from "../typeorm";
+
+createConnection();
 
 const app = express();
 

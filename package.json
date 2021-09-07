@@ -8,8 +8,9 @@
     "start": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
     "migration:generate": "ts-node ./node_modules/typeorm/cli.js migration:generate -n",
     "migration:create": "ts-node  ./node_modules/typeorm/cli.js migration:create -n",
-    "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run"
-  },
+    "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run",
+    "seed:admin": "ts-node-dev src/shared/infra/typeorm/seed/admin.ts"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lucascarvalhobr/ignite-nodejs-api-solid.git"
